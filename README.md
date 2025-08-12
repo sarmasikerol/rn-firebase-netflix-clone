@@ -1,4 +1,4 @@
-# 📱 React Native Firebase Messaging App
+şuan okay mi # 📱 React Native Firebase Messaging App
 
 This project is a mobile application built with **React Native**.  
 It integrates **Firebase Cloud Messaging (FCM)** to receive push notifications,  
@@ -43,8 +43,7 @@ The project is structured based on the **MVVM** architecture.
 "react-native-safe-area-context",
 "react-native-screens",
 "react-native-vector-icons",
-"react-redux"
-
+"react-redux" ```
 
 ![](ekran.gif)
 # rn-firebase-netflix-clone
