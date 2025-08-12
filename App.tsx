@@ -1,28 +1,28 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+//import liraries
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import RootNavigator from './src/router/rootNavigator';
+import { Provider } from 'react-redux';
+import { store } from './src/store';
+// create a component
+const App: React.FC = () => {
+  const linking = {
+    prefixes: ['http://www.netflix.com', 'https://www.netflix.com'],
+    config: {
+      screens: {
+        TAB: '',
+        moviedetail: 'detail/:id', // screens isimleri route ile aynı olmalı
+      },
+    },
+  };
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer linking={linking}>
+        <RootNavigator />
+      </NavigationContainer>
+    </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
+//make this component available to the app
 export default App;
